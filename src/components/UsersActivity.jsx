@@ -14,7 +14,7 @@ export const UsersActivity = ({ token }) => {
   const fetchActivities = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:8000/admin/activities?filter=${filter}&time_range=${timeRange}`, {
+        const response = await fetch(`https://jwt-authentication-dashboard.onrender.com/admin/activities?filter=${filter}&time_range=${timeRange}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -266,4 +266,5 @@ export const UsersActivity = ({ token }) => {
       </div>
     </div>
   );
+
 };
