@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUserInfo = async () => {
     try {
-      const response = await fetch('https://jwt-authentication-dashboard.onrender.com', {
+        const response = await fetch('https://jwt-authentication-dashboard.onrender.com/me', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -124,3 +124,4 @@ export const useAuth = () => {
   return context;
 
 };
+
