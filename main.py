@@ -75,9 +75,9 @@ def create_default_admin():
     db = SessionLocal()
     try:
         # Get admin credentials from environment variables
-        admin_email = os.getenv("DEFAULT_ADMIN_EMAIL", "admin@example.com")
-        admin_password = os.getenv("DEFAULT_ADMIN_PASSWORD", "#Admin@123")
-        admin_name = os.getenv("DEFAULT_ADMIN_NAME", "System Admin")
+        admin_email = os.getenv("DEFAULT_ADMIN_EMAIL")
+        admin_password = os.getenv("DEFAULT_ADMIN_PASSWORD")
+        admin_name = os.getenv("DEFAULT_ADMIN_NAME")
         
         admin = db.query(AdminDB).filter(AdminDB.email == admin_email).first()
         if not admin:
@@ -690,3 +690,4 @@ if __name__ == "__main__":
     import uvicorn
 
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+
