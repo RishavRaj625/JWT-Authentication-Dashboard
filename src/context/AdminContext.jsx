@@ -18,7 +18,7 @@ export const AdminProvider = ({ children }) => {
 
   const fetchAdminInfo = async () => {
     try {
-      const response = await fetch('https://jwt-authentication-dashboard.onrender.com', {
+        const response = await fetch('https://jwt-authentication-dashboard.onrender.com/admin/me', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -95,3 +95,4 @@ export const useAdmin = () => {
   return context;
 
 };
+
