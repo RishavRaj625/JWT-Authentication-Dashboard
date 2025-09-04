@@ -39,7 +39,7 @@ export const AdminProvider = ({ children }) => {
   const login = async (email, password) => {
     setLoading(true);
     try {
-      const response = await fetch('https://jwt-authentication-dashboard.onrender.com', {
+      const response = await fetch('https://jwt-authentication-dashboard.onrender.com/admin/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -95,4 +95,5 @@ export const useAdmin = () => {
   return context;
 
 };
+
 
