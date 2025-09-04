@@ -17,7 +17,7 @@ export const UsersList = ({ token }) => {
   const fetchUsers = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:8000/admin/users?sort_by=${sortBy}&sort_order=${sortOrder}`, {
+        const response = await fetch(`https://jwt-authentication-dashboard.onrender.com/admin/users?sort_by=${sortBy}&sort_order=${sortOrder}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -290,4 +290,5 @@ export const UsersList = ({ token }) => {
       </div>
     </div>
   );
+
 };
