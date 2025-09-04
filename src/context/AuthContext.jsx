@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     setLoading(true);
     try {
-      const response = await fetch('https://jwt-authentication-dashboard.onrender.com', {
+      const response = await fetch('https://jwt-authentication-dashboard.onrender.com/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ export const AuthProvider = ({ children }) => {
   const register = async (name, email, password) => {
     setLoading(true);
     try {
-      const response = await fetch('https://jwt-authentication-dashboard.onrender.com', {
+        const response = await fetch('https://jwt-authentication-dashboard.onrender.com/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -124,4 +124,5 @@ export const useAuth = () => {
   return context;
 
 };
+
 
