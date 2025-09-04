@@ -38,7 +38,7 @@ export const UsersList = ({ token }) => {
 
   const handleUserAction = async (userId, action) => {
     try {
-      const response = await fetch(`http://localhost:8000/admin/users/${userId}/${action}`, {
+      const response = await fetch(`https://jwt-authentication-dashboard.onrender.com/admin/users/${userId}/${action}`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -292,3 +292,4 @@ export const UsersList = ({ token }) => {
   );
 
 };
+
