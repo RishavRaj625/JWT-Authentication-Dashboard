@@ -18,7 +18,7 @@ export const AdminProvider = ({ children }) => {
 
   const fetchAdminInfo = async () => {
     try {
-      const response = await fetch('http://localhost:8000/admin/me', {
+      const response = await fetch('https://jwt-authentication-dashboard.onrender.com', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -39,7 +39,7 @@ export const AdminProvider = ({ children }) => {
   const login = async (email, password) => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:8000/admin/login', {
+      const response = await fetch('https://jwt-authentication-dashboard.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -93,4 +93,5 @@ export const useAdmin = () => {
     throw new Error('useAdmin must be used within AdminProvider');
   }
   return context;
+
 };
