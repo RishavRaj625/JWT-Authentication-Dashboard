@@ -18,7 +18,7 @@ export const Dashboard = () => {
 
   const fetchDashboardData = async () => {
     try {
-      const response = await fetch('http://localhost:8000/dashboard', {
+      const response = await fetch('https://jwt-authentication-dashboard.onrender.com', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
