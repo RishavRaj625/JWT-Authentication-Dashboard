@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUserInfo = async () => {
     try {
-      const response = await fetch('http://localhost:8000/me', {
+      const response = await fetch('https://jwt-authentication-dashboard.onrender.com', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:8000/login', {
+      const response = await fetch('https://jwt-authentication-dashboard.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ export const AuthProvider = ({ children }) => {
   const register = async (name, email, password) => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:8000/register', {
+      const response = await fetch('https://jwt-authentication-dashboard.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -122,4 +122,5 @@ export const useAuth = () => {
     throw new Error('useAuth must be used within AuthProvider');
   }
   return context;
+
 };
