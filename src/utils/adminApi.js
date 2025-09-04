@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 // Generic admin API request function
 const adminApiRequest = async (endpoint, token, options = {}) => {
@@ -204,4 +204,5 @@ export const adminNotificationsAPI = {
     const queryString = new URLSearchParams(params).toString();
     return adminApiRequest(`/notifications/history?${queryString}`, token);
   },
+
 };
