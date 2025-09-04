@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'https://jwt-authentication-dashboard.onrender.com';
 
 // Generic API request function
 const apiRequest = async (endpoint, options = {}) => {
@@ -66,4 +66,5 @@ export const authenticatedRequest = async (endpoint, token, options = {}) => {
       'Authorization': `Bearer ${token}`,
     },
   });
+
 };
